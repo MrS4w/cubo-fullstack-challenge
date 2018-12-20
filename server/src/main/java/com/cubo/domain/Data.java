@@ -27,6 +27,10 @@ public class Data implements Serializable {
 		this.participation = participation;
 	}
 
+	public Data() {
+
+	}
+
 	public Integer getId() {
 		return id;
 	}
