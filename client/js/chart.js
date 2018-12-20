@@ -22,7 +22,7 @@ option = {
                     position: 'center'
                 },
                 emphasis: {
-                    show: true,
+                    show: false,
                     textStyle: {
                         fontSize: '30',
                         fontWeight: 'bold'
