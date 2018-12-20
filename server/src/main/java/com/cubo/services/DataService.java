@@ -1,5 +1,7 @@
 package com.cubo.services;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,5 +20,24 @@ public class DataService {
 			throw new ObjectNotFoundException("Objeto não encontrado!" + "Id: " + id + "Tipo: " + Data.class.getName());
 		}
 		return obj;
+	}
+	
+	public Data insert(Data obj) {
+		obj.setId(null);
+		return repo.save(obj);
+	}
+
+	public Data update(Data obj) {
+		find(obj.getId());
+		return repo.save(obj);
+	}
+
+	public void delete(Integer id) {
+		find(id);
+		repo.delete(id);
+	}
+
+	public List<Data> findAll() {
+		return repo.findAll();
 	}
 }
