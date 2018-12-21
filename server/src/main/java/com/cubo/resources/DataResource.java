@@ -28,7 +28,7 @@ public class DataResource {
 		return ResponseEntity.ok().body(obj);
 	}
 
-	@RequestMapping(method = RequestMethod.POST)
+	@RequestMapping(method = RequestMethod.POST, produces = "application/json")
 	public ResponseEntity<Void> insert(@RequestBody Data obj) {
 		obj = service.insert(obj);
 		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(obj.getId())
