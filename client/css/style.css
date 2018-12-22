@@ -30,7 +30,8 @@ p {
     box-sizing: border-box;
 } 
 
-input[type=text] {
+input[type=text],
+input[type=number] {
     height: 40px;
     width: 244px;
     margin-right: 1%;
@@ -74,7 +75,8 @@ td {
 }
 
 td:nth-child(1), 
-td:nth-child(4) {
+td:nth-child(4),
+tr:last-child {
     text-align: center;
 }
 
@@ -91,7 +93,7 @@ th:nth-child(3) {
 }
 
 #main {
-    height: 200px;
+    height: 270px;
 }
 
 /* Columns */
