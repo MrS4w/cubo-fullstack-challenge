@@ -43,8 +43,8 @@ function getData() {
                 obj.forEach((element, i) => {
                     option.series[0].data[i] = {}
                     option.series[0].data[i].value = element.participation
-                    option.series[0].data[i].name = element.firstName
-                    option.legend.data.push(element.firstName)
+                    option.series[0].data[i].name = element.firstName + ' ' + element.lastName
+                    option.legend.data.push(element.firstName + ' ' + element.lastName)
                     myChart.setOption(option)
 
                     document.getElementById('tbody').innerHTML += `
