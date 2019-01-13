@@ -1,15 +1,19 @@
-const port = 3000
-const host = 'localhost'
+const port = 8080
 
 const express = require('express')
-const bodyParser = require('body-parser')
-
 const app = express()
 
-app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({ extended: false }))
+app.get('/data', (req, res) => {
+    res.header("Access-Control-Allow-Origin", "*")
 
-require('./controllers/dataController')(app)
+    res.send([{
+        "id": 1,
+        "firstName": "Victor",
+        "lastName": "Silva",
+        "participation": 7
+    }])
+})
 
-app.listen(port)
-console.log(`Listening on "${host}:${port}"`)
+app.listen(port, () => {
+    console.log(`Listening on port: ${port}`)
+})
